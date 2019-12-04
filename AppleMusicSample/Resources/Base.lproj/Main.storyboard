@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="q7m-WU-UMc">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="o8l-PW-h3g">
+            <objects>
+                <tabBarController id="q7m-WU-UMc" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="RjS-2y-qdI"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="x0X-f8-90a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="NHe-8C-jZZ" kind="relationship" relationship="viewControllers" id="TAf-0T-hOK"/>
+                        <segue destination="ZIl-uz-eY2" kind="relationship" relationship="viewControllers" id="uDw-KF-dfX"/>
+                        <segue destination="yC8-Ai-wnL" kind="relationship" relationship="viewControllers" id="qmb-yr-mgo"/>
+                        <segue destination="OSL-3S-q0q" kind="relationship" relationship="viewControllers" id="5LW-bV-tqN"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IUS-ff-j8n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1444" y="940"/>
+        </scene>
+        <!--Authorize-->
+        <scene sceneID="nBa-Fm-Pi0">
+            <objects>
+                <navigationController id="NHe-8C-jZZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Authorize" image="Configure" id="r7Q-HE-NRz"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RV7-2S-kMb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Unr-Kc-eRc" kind="relationship" relationship="rootViewController" id="lPc-Ov-fdo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DB1-PA-0rT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-663" y="256"/>
+        </scene>
+        <!--Authorize-->
+        <scene sceneID="UfY-RO-Maj">
+            <objects>
+                <tableViewController title="Authorize" id="Unr-Kc-eRc" customClass="AuthorizationTableViewController" customModule="Apple_Music_Base" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="XgZ-dz-ngr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AuthorizationCellIdentifier" textLabel="wDl-mf-BtJ" style="IBUITableViewCellStyleDefault" id="MTF-pD-fX0">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MTF-pD-fX0" id="W3M-Rt-2XP">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wDl-mf-BtJ">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Unr-Kc-eRc" id="yad-1X-jMp"/>
+                            <outlet property="delegate" destination="Unr-Kc-eRc" id="sKQ-7i-2YD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Authorize" id="qRA-5D-p0O">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Request" id="g4C-28-bQa">
+                            <connections>
+                                <action selector="requestAuthorization:" destination="Unr-Kc-eRc" id="MN5-5w-5l3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qqh-Fr-SGT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="164" y="256"/>
+        </scene>
+        <!--Player-->
+        <scene sceneID="hIa-gT-vuQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yC8-Ai-wnL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Player" image="Play" id="ZhT-zc-VGC"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="N0f-Zh-0Os">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nB8-Cs-Rc9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-663" y="1676"/>
+        </scene>
+        <!--Playlist-->
+        <scene sceneID="RCo-EI-BkT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZIl-uz-eY2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Playlist" image="Assets" id="DcK-lH-QLZ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fXR-fT-1u8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WCI-Q4-QWn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-663" y="940"/>
+        </scene>
+        <!--Media Search-->
+        <scene sceneID="kF2-8M-MJo">
+            <objects>
+                <tableViewController title="Media Search" id="GPL-vt-7V6" customClass="MediaSearchTableViewController" customModule="Adding_Content_to_Apple_Music" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ekf-YS-JOK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MediaItemTableViewCell" rowHeight="126" id="qf6-o9-qRW" customClass="MediaItemTableViewCell" customModule="Adding_Content_to_Apple_Music" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="126"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qf6-o9-qRW" id="kvR-CC-1mR">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="126"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i86-dR-fQ2">
+                                            <rect key="frame" x="16" y="11" width="90" height="90"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="90" id="6xK-j8-LOF"/>
+                                                <constraint firstAttribute="height" constant="90" id="XYo-Oh-gf0"/>
+                                            </constraints>
+                                        </imageView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iHw-wa-TOY">
+                                            <rect key="frame" x="114" y="11" width="261" height="87"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8U-uf-PtS">
+                                                    <rect key="frame" x="0.0" y="0.0" width="261" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zl6-Ff-axQ">
+                                                    <rect key="frame" x="0.0" y="28.5" width="261" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Czz-5S-UwQ">
+                                                    <rect key="frame" x="0.0" y="57" width="261" height="30"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWq-Z9-ZO1">
+                                                            <rect key="frame" x="0.0" y="0.0" width="126.5" height="30"/>
+                                                            <state key="normal" title="Add To Playlist"/>
+                                                            <connections>
+                                                                <action selector="addToPlaylist:" destination="qf6-o9-qRW" eventType="touchUpInside" id="M28-1Q-mkO"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oL7-YH-Cxu">
+                                                            <rect key="frame" x="134.5" y="0.0" width="126.5" height="30"/>
+                                                            <state key="normal" title="Play"/>
+                                                            <connections>
+                                                                <action selector="playMediaItem:" destination="qf6-o9-qRW" eventType="touchUpInside" id="7pB-mI-CKc"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="iHw-wa-TOY" firstAttribute="leading" secondItem="i86-dR-fQ2" secondAttribute="trailing" constant="8" symbolic="YES" id="9gD-Fg-qmd"/>
+                                        <constraint firstItem="iHw-wa-TOY" firstAttribute="top" secondItem="kvR-CC-1mR" secondAttribute="topMargin" id="AHP-5o-DIg"/>
+                                        <constraint firstItem="i86-dR-fQ2" firstAttribute="leading" secondItem="kvR-CC-1mR" secondAttribute="leadingMargin" id="JOq-Ox-c0P"/>
+                                        <constraint firstItem="i86-dR-fQ2" firstAttribute="top" secondItem="kvR-CC-1mR" secondAttribute="topMargin" id="KqE-7U-g8c"/>
+                                        <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="iHw-wa-TOY" secondAttribute="bottom" id="PI4-sk-70i"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="i86-dR-fQ2" secondAttribute="bottomMargin" id="YZ0-1Z-gU5"/>
+                                        <constraint firstAttribute="trailing" secondItem="iHw-wa-TOY" secondAttribute="trailingMargin" id="fTO-uj-E2L"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="addToPlaylistButton" destination="sWq-Z9-ZO1" id="Tjt-XK-jwc"/>
+                                    <outlet property="assetCoverArtImageView" destination="i86-dR-fQ2" id="hco-4A-a7v"/>
+                                    <outlet property="mediaItemArtistLabel" destination="Zl6-Ff-axQ" id="ebY-o9-LYI"/>
+                                    <outlet property="mediaItemTitleLabel" destination="C8U-uf-PtS" id="5fz-eA-mld"/>
+                                    <outlet property="playItemButton" destination="oL7-YH-Cxu" id="Dzy-Iu-w4T"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="GPL-vt-7V6" id="LUP-Rj-Dqi"/>
+                            <outlet property="delegate" destination="GPL-vt-7V6" id="Jzf-NZ-R61"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Media Search" id="wZZ-3E-5Rw"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aht-6f-kXp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="311" y="2368"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Cl2-fU-FvF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OSL-3S-q0q" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="search" id="Tu4-B4-PVa"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="32i-Y0-wOo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GPL-vt-7V6" kind="relationship" relationship="rootViewController" id="PwR-oK-0ul"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lUs-OR-4tZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-663" y="2368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Assets" width="28" height="22"/>
+        <image name="Configure" width="28" height="28"/>
+        <image name="Play" width="25" height="25"/>
+    </resources>
+</document>
